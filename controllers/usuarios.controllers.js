@@ -29,6 +29,7 @@ const crearUsuario = async (req, res = response) => {
 
     const { email, password } = req.body;
 
+
     try {
 
         const existeEmail = await Usuario.findOne({email});
@@ -65,7 +66,7 @@ const crearUsuario = async (req, res = response) => {
             msg: 'Error inesperado. Revisar logs'
         })
     }
-
+    
     
 
 }
@@ -73,6 +74,7 @@ const crearUsuario = async (req, res = response) => {
 const actualizarUsuario = async (req, res = response ) => {
 
     const uid = req.params.id;
+    
 
     try {
 
@@ -88,7 +90,7 @@ const actualizarUsuario = async (req, res = response ) => {
         // Actualizaciones 
         const {password, google, email, ...campos} = req.body;
 
-        if (usuarioDB.email != email) {
+        if (usuarioDB.email !== email) {
         
             const existeEmail = await Usuario.findOne({ email });
             if (existeEmail) {

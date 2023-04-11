@@ -10,13 +10,16 @@ const app = express();
 //Configurar CORS
 app.use(cors());
 
+// Carpeta publica
+app.use( express.static('public') )
+
 // Lectura y parseo del body
 app.use( express.json() );
 
 // Base de Datos
 dbConnection();
 
-// LNUSnFp4KFOt1LMG
+// DfZj2NvitBDRzTP5
 // mean_user
 
 // Rutas

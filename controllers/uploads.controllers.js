@@ -28,7 +28,7 @@ const fileUpload = (req, res = response) => {
     }
     
     // Procesar la imagen
-    const file = req.file.imagen;
+    const file = req.files.imagen;
 
     const nombreCortado = file.name.split('.');
     const extensionArchivo = nombreCortado[ nombreCortado.length -1 ];
